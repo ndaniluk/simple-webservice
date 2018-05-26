@@ -12,6 +12,9 @@ public class EmployeeService {
 
     private static List<Employee> employees = new ArrayList<>();
     private static int id = 0;
+    static{
+        employees.add(new Employee(++id, "Norbox", "Dennilak", new Date(), "12345678"));
+    }
 
 
     public List<Employee> findAll(){
@@ -25,7 +28,7 @@ public class EmployeeService {
             return employees.get(id);
     }
 
-    public void add(String name, String surname, String phoneNumber){
+    public void create(String name, String surname, String phoneNumber){
         employees.add(new Employee(++id, name, surname, new Date(), phoneNumber));
     }
 
@@ -36,7 +39,5 @@ public class EmployeeService {
             employees.remove(id);
             return employees.get(id);
         }
-
     }
-
 }
