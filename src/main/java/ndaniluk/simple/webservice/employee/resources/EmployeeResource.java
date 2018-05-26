@@ -20,7 +20,7 @@ public class EmployeeResource {
 
     @GetMapping(path = "/employees/{id}")
     public Employee retrieveEmployee(@PathVariable int id){
-        return service.findById(id-1);
+        return service.findById(id);
     }
 
     @PostMapping(path = "/employees")
@@ -30,7 +30,7 @@ public class EmployeeResource {
 
     @DeleteMapping(path = "/employees/{id}")
     public void removeEmployee(@PathVariable int id){
-        service.remove(id-1);
+        service.remove(id);
     }
 
 }

@@ -5,6 +5,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Iterator;
 import java.util.List;
 
 @Component
@@ -23,10 +24,13 @@ public class EmployeeService {
     }
 
     public Employee findById(int id){
-        if (employees.get(id) == null)
-            return null;
-        else
-            return employees.get(id);
+        Iterator<Employee> iterator = employees.iterator();
+        while (iterator.hasNext()){
+            Employee employee = iterator.next();
+            if (employee.getId() == id)
+                return employee;
+        }
+        return null;
     }
 
     public void create(String name, String surname, String phoneNumber){
@@ -34,11 +38,15 @@ public class EmployeeService {
     }
 
     public Employee remove(int id){
-        if(employees.get(id) == null)
-            return null;
-        else {
-            employees.remove(id);
-            return employees.get(id);
+        Iterator<Employee> iterator = employees.iterator();
+
+        while(iterator.hasNext()){
+            Employee employee = iterator.next();
+            if (employee.getId() == id) {
+                iterator.remove();
+                return employee;
+            }
         }
+        return null;
     }
 }
