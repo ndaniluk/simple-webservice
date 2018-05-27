@@ -1,13 +1,17 @@
 package ndaniluk.simple.webservice.employee;
 
+import org.hibernate.validator.constraints.Length;
+
 import java.util.Date;
 
 public class Employee {
 
     private int id;
 
+    @Length(min = 2)
     private String name;
 
+    @Length(min = 2)
     private String surname;
 
     private Date employmentDate;
