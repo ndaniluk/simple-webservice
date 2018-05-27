@@ -24,8 +24,8 @@ public class EmployeeResource {
     }
 
     @GetMapping(path = "/employees/{id}")
-    public Employee retrieveEmployee(@PathVariable int id){
-        if(service.findById(id) == null)
+    public Employee retrieveEmployee(@PathVariable int id) {
+        if (service.findById(id) == null)
             throw new UserNotFoundException("Employee with id " + id + " not found");
         else
             return service.findById(id);
