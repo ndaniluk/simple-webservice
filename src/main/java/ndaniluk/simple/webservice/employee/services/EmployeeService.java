@@ -20,13 +20,18 @@ public class EmployeeService {
 
 
     public List<Employee> findAll(){
-        return employees;
+        if(employees.size() == 0)
+            return null;
+        else
+            return employees;
     }
 
     public Employee findById(int id){
         Iterator<Employee> iterator = employees.iterator();
+        Employee employee;
+
         while (iterator.hasNext()){
-            Employee employee = iterator.next();
+            employee = iterator.next();
             if (employee.getId() == id)
                 return employee;
         }
@@ -39,9 +44,10 @@ public class EmployeeService {
 
     public Employee remove(int id){
         Iterator<Employee> iterator = employees.iterator();
+        Employee employee;
 
         while(iterator.hasNext()){
-            Employee employee = iterator.next();
+            employee = iterator.next();
             if (employee.getId() == id) {
                 iterator.remove();
                 return employee;
