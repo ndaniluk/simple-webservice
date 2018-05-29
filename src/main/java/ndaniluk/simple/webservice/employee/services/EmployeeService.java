@@ -1,6 +1,6 @@
 package ndaniluk.simple.webservice.employee.services;
 
-import ndaniluk.simple.webservice.employee.Employee;
+import ndaniluk.simple.webservice.employee.models.Employee;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -13,10 +13,6 @@ public class EmployeeService {
 
     private static List<Employee> employees = new ArrayList<>();
     private static int id = 0;
-    static{
-        employees.add(new Employee(++id, "Norbox", "Dennilak", new Date(), "12345678"));
-        employees.add(new Employee(++id, "Marcel", "Ukrainski", new Date(), "456789123"));
-    }
 
 
     public List<Employee> findAll(){

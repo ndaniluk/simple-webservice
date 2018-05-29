@@ -1,6 +1,6 @@
-package ndaniluk.simple.webservice.employee.resources;
+package ndaniluk.simple.webservice.employee.controllers;
 
-import ndaniluk.simple.webservice.employee.Employee;
+import ndaniluk.simple.webservice.employee.models.Employee;
 import ndaniluk.simple.webservice.employee.exceptions.UserNotFoundException;
 import ndaniluk.simple.webservice.employee.services.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,10 +10,10 @@ import javax.validation.Valid;
 import java.util.List;
 
 @RestController
-public class EmployeeResource {
+public class EmployeeController {
 
     @Autowired
-    EmployeeService service;
+    private EmployeeService service;
 
     @GetMapping(path = "/employees")
     public List<Employee> retrieveAllEmployees(){

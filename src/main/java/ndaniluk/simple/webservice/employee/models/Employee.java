@@ -1,4 +1,4 @@
-package ndaniluk.simple.webservice.employee;
+package ndaniluk.simple.webservice.employee.models;
 
 import org.hibernate.validator.constraints.Length;
 
