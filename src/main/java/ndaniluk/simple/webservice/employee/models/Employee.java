@@ -1,81 +1,81 @@
 package ndaniluk.simple.webservice.employee.models;
 
-import org.hibernate.validator.constraints.Length;
-
 import java.util.Date;
+import org.hibernate.validator.constraints.Length;
 
 public class Employee {
 
-    private int id;
+  private int id;
 
-    @Length(min = 2)
-    private String name;
+  @Length(min = 2)
+  private String name;
 
-    @Length(min = 2)
-    private String surname;
+  @Length(min = 2)
+  private String surname;
 
-    private Date employmentDate;
+  private Date employmentDate;
 
-    private String phoneNumber;
+  private String phoneNumber;
 
-    protected Employee() {}
+  protected Employee() {
+  }
 
-    public Employee(int id, String name, String surname, Date employmentDate, String phoneNumber) {
-        this.id = id;
-        this.name = name;
-        this.surname = surname;
-        this.employmentDate = employmentDate;
-        this.phoneNumber = phoneNumber;
-    }
+  public Employee(int id, String name, String surname, Date employmentDate, String phoneNumber) {
+    this.id = id;
+    this.name = name;
+    this.surname = surname;
+    this.employmentDate = employmentDate;
+    this.phoneNumber = phoneNumber;
+  }
 
-    public int getId() {
-        return id;
-    }
+  public int getId() {
+    return id;
+  }
 
-    public void setId(int id) {
-        this.id = id;
-    }
+  public void setId(int id) {
+    this.id = id;
+  }
 
-    public String getName() {
-        return name;
-    }
+  public String getName() {
+    return name;
+  }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+  public void setName(String name) {
+    this.name = name;
+  }
 
-    public String getSurname() {
-        return surname;
-    }
+  public String getSurname() {
+    return surname;
+  }
 
-    public void setSurname(String surname) {
-        this.surname = surname;
-    }
+  public void setSurname(String surname) {
+    this.surname = surname;
+  }
 
-    public Date getEmploymentDate() {
-        return employmentDate;
-    }
+  public Date getEmploymentDate() {
+    return employmentDate;
+  }
 
-    public void setEmploymentDate(Date employmentDate) {
-        this.employmentDate = employmentDate;
-    }
+  public void setEmploymentDate(Date employmentDate) {
+    this.employmentDate = employmentDate;
+  }
 
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
+  public String getPhoneNumber() {
+    return phoneNumber;
+  }
 
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
-    }
+  public void setPhoneNumber(String phoneNumber) {
+    this.phoneNumber = phoneNumber;
+  }
 
-    @Override
-    public String toString() {
-        return "Employee{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", surname='" + surname + '\'' +
-                ", employmentDate=" + employmentDate +
-                ", phoneNumber='" + phoneNumber + '\'' +
-                '}';
-    }
+  @Override
+  public String toString() {
+    return "Employee{" +
+        "id=" + id +
+        ", name='" + name + '\'' +
+        ", surname='" + surname + '\'' +
+        ", employmentDate=" + employmentDate +
+        ", phoneNumber='" + phoneNumber + '\'' +
+        '}';
+  }
 }
